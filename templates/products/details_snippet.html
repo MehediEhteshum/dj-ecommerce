@@ -1,0 +1,7 @@
+<h1>{{product.title}}</h1>
+{% if product.desc %}
+    <p><b>Description:</b> {{product.desc}}</p>
+{% else %}
+    <p>Description coming soon.</p>
+{% endif %}
+<p><b>Price:</b> {{product.price}}</p>

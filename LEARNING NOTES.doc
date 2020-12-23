@@ -1,0 +1,25 @@
+# Important files and folders
+project_folder/settings.py // add apps/components, add 'templates' directory
+project_folder/urls.py // add view paths
+app/models.py // add models/schema
+app/admin.py // import and register the app
+app/views.py // adds view methods/classes, render templates
+templates // create templates folder, add all 'html' templates and snippets here
+
+# Starting project
+python -m venv . // creates virtual environment inside the project folder
+.\Scripts\activate // activates the environment in winOS
+pip freeze // lists installed libraries in the environment
+pip install django // installs in the environment
+django-admin // lists django commands
+django-admin startproject project_name . // creates and starts project
+// save workspace if necessary
+python manage.py // lists commands and works specific for the project
+python manage.py createsuperuser // creates superuser
+python manage.py runserver // runs the server
+
+python manage.py startapp appname // creates app/component
+python manage.py makemigrations // commits db changes
+python manage.py migrate // creates db
+
+python manage.py shell // to access db

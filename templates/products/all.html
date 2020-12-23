@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}
+All Products - {{block.super}}
+{% endblock %}
+
+{% block content %}
+{% for product in products %}
+    {% include "products/details_snippet.html" with product=product %}
+    <hr>
+{% endfor %}
+{% endblock %}
