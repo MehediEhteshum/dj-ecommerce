@@ -6,6 +6,7 @@ All Products - {{block.super}}
 
 {% block content %}
 {% for product in products %}
+    <!-- reusing 'html' snippet -->
     {% include "products/details_snippet.html" with product=product %}
     <hr>
 {% endfor %}
