@@ -3,8 +3,10 @@ project_folder/settings.py // add apps/components, add 'templates' directory
 project_folder/urls.py // add view paths
 app/models.py // add models/schema
 app/admin.py // import and register the app
-app/views.py // adds view methods/classes, render templates
+app/views.py // adds view methods/classes, render templates. get POST ot GET values. manage form instances.
 templates // create templates folder, add all 'html' templates and snippets here
+templates/app/form.html // create or add html form. It prevents from 'url' query. add csrf_token.
+app/forms.py // import and create django Form or better ModelForm. custom data validation can be added.
 
 # Starting project
 python -m venv . // creates virtual environment inside the project folder

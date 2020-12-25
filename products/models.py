@@ -6,5 +6,6 @@ from django.db import models
 class Product(models.Model):
     # id = models.AutoField()
     title = models.CharField(max_length=220)
-    desc = models.TextField(null=True, blank=True)
-    price = models.FloatField(default=0)
+    desc = models.TextField(null=True, blank=True,
+                            default="Details coming soon")
+    price = models.FloatField()

@@ -20,6 +20,8 @@ from products.views import (
     home_view,
     products_list_view,
     product_detail_view,
+    # bad_view, # test purpose
+    product_create_view,
     product_api_detail_view
 )
 
@@ -28,6 +30,8 @@ urlpatterns = [
     path('', home_view),
     path('products/', products_list_view),
     path('products/<int:pk>/', product_detail_view),
+    # path('bad/', bad_view), # test purpose
+    path('add-product/', product_create_view),
     # path('api/products/<int:pk>/', product_api_detail_view),
     re_path(r'api/products/(?P<pk>\d+)/', product_api_detail_view),
 ]
