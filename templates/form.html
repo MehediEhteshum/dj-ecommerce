@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+<!-- using variable 'product' coming from context passing from view -->
+{% block title %}
+User Form: - {{block.super}}
+{% endblock %}
+
+{% block content %}
+<form method="POST" action=".">{% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

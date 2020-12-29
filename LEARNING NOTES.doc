@@ -7,6 +7,7 @@ app/views.py // adds view methods/classes, render templates. get POST ot GET val
 templates // create templates folder, add all 'html' templates and snippets here
 templates/app/form.html // create or add html form. It prevents from 'url' query. add csrf_token.
 app/forms.py // import and create django Form or better ModelForm. custom data validation can be added.
+accounts // create app for user signup, login, logout views and forms
 
 # Starting project
 python -m venv . // creates virtual environment inside the project folder

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse, Http404
 
 from .models import Product
@@ -39,6 +41,7 @@ def products_list_view(request, *args, **kwargs):
 #     context = {"data": data}
 #     return render(request, "products/form_create.html", context)
 
+@staff_member_required
 def product_create_view(request, *args, **kwargs):
     form = ProductModelForm(request.POST or None)
     if form.is_valid():
@@ -48,12 +51,14 @@ def product_create_view(request, *args, **kwargs):
         # not saved in db yet due to commit=False
         obj = form.save(commit=False)
         # do some stuff e.g. obj.user = request.user, then save
+        obj.user = request.user
         obj.save()
         form = ProductModelForm()  # refreshing form after product creation
     context = {"form": form}
     return render(request, "products/form_create.html", context)
 
 
+@login_required
 def product_detail_view(request, pk, *args, **kwargs):
     try:
         p = Product.objects.get(pk=pk)
