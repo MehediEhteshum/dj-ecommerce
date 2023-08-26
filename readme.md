@@ -1,1 +1,1 @@
-Creating e-commerce website using django.
+# Ecommerce website using django (README TO BE UPDATED) 
